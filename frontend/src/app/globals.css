@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+}
+
+:root {
+  --background: #F8F6F0;
+  --foreground: #2D221C;
+  --card: #FFFEFA;
+  --card-foreground: #2D221C;
+  --popover: #FFFEFA;
+  --popover-foreground: #2D221C;
+  --primary: #236B6B;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F6EED9;
+  --secondary-foreground: #8C6615;
+  --muted: #EFEBE3;
+  --muted-foreground: #726257;
+  --accent: #E8F2F2;
+  --accent-foreground: #1D5E5E;
+  --destructive: #B83A3A;
+  --border: #E8E2D5;
+  --input: #E2DBD0;
+  --ring: #236B6B;
+  --radius: 0.75rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom LearnOS aesthetic utilities */
+.learnos-card {
+  background-color: #FFFEFA;
+  border: 1px solid #E8E2D5;
+  border-radius: 1rem;
+  box-shadow: 0 2px 14px -3px rgba(45, 34, 28, 0.05);
+}
+
+.learnos-card-hover {
+  transition: all 0.2s ease-in-out;
+}
+.learnos-card-hover:hover {
+  border-color: #D6CEBF;
+  box-shadow: 0 6px 20px -4px rgba(45, 34, 28, 0.08);
+}
+
+/* ===== TipTap Editor Styles ===== */
+.tiptap.ProseMirror {
+  min-height: 100%;
+  outline: none;
+  color: #2D221C;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: #9E8F84;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.tiptap h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #241A14;
+}
+
+.tiptap h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+  color: #2D221C;
+}
+
+.tiptap h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  color: #382C24;
+}
+
+.tiptap p {
+  margin-bottom: 0.65rem;
+  line-height: 1.6;
+  color: #362A22;
+}
+
+.tiptap strong {
+  font-weight: 700;
+  color: #201712;
+}
+
+.tiptap em {
+  font-style: italic;
+}
+
+.tiptap u {
+  text-decoration: underline;
+  text-decoration-color: #C29227;
+}
+
+.tiptap s {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.tiptap mark {
+  background-color: #F8E3B6;
+  color: #2D221C;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.3rem;
+}
+
+.tiptap a {
+  color: #236B6B;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.tiptap a:hover {
+  color: #195252;
+}
+
+.tiptap code {
+  background-color: #EFEBE3;
+  color: #8C4724;
+  border-radius: 0.375rem;
+  padding: 0.15rem 0.35rem;
+  font-size: 0.875em;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.tiptap pre {
+  background-color: #241D19;
+  color: #F8F6F0;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin: 0.75rem 0;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.tiptap pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid #236B6B;
+  padding-left: 1rem;
+  margin: 0.75rem 0;
+  font-style: italic;
+  color: #6E5F55;
+}
+
+.tiptap ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 0.65rem;
+  color: #362A22;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 0.65rem;
+  color: #362A22;
+}
+
+.tiptap li {
+  line-height: 1.6;
+  margin-bottom: 0.25rem;
+}
+
+.tiptap hr {
+  border-color: #E8E2D5;
+  margin: 1.25rem 0;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9D2C5;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C4BCAC;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
